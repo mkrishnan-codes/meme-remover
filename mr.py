@@ -18,7 +18,7 @@ for filename in os.listdir(directory):
     if (filename.endswith(".jpg") | filename.endswith(".png")):
         currText = pytesseract.image_to_string(Image.open(directory+filename))
         if currText == "":
-            print(' : No meme in ' + filename)
+            print(' : No text in ' + filename)
         else:
             moved = moved+1
             shutil.move(directory+filename, dest_folder)
